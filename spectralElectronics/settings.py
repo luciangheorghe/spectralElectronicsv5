@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['f04e89e9.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = ['f2e26066.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'orders',
     'paypal.standard.ipn',
     'payment',
+    'coupons',
 ]
 
 MIDDLEWARE = [

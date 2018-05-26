@@ -16,7 +16,6 @@ guacamole==0.9.2
 gunicorn==19.8.1
 html5lib==1.0.1
 httplib2==0.9.1
-idna==2.6
 Jinja2==2.8
 lxml==3.5.0
 Mako==1.0.3
@@ -27,8 +26,6 @@ pdfrw==0.4
 pexpect==4.0.1
 Pillow==5.1.0
 pipreqs==0.4.9
-plainbox==0.25
-ply==3.7
 psycopg2==2.7.4
 ptyprocess==0.5
 pyasn1==0.1.9

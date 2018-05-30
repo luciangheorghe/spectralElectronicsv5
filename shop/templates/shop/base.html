@@ -8,7 +8,7 @@
     <title>{% block title %}spectralElectronics{% endblock %}</title>
     <link href="{% static "css/base.css" %}" rel="stylesheet" />
 </head>
-<body>
+<body id="main-body">
     <div id="header">
         <a href="/" class="logo">spectralElectronics</a>
     </div>
@@ -29,6 +29,11 @@
     <div id="content">
         {% block content %}
         {% endblock %}
+    </div>
+    <div id="footer">
+      <p>
+        Copyright 2018. Lucas Gheorghe
+      </p>
     </div>
 </body>
 </html>

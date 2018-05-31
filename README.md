@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/luciangheorghe/spectralElectronicsv5.svg?branch=master)](https://travis-ci.org/luciangheorghe/spectralElectronicsv5)
-
 # spectralElectronics - New Stuff Everyday - Project for Stream 3 - Code Institute
+
+[![Build Status](https://travis-ci.org/luciangheorghe/spectralElectronicsv5.svg?branch=master)](https://travis-ci.org/luciangheorghe/spectralElectronicsv5)
 
 This project is a Full Stack Web Application - It is a Ecommerce Platform that lets you buy the latest technology.
 Users need to access the shop filter what they need and at to cart. Payment is taken securely using Paypal. The users don't need to waste

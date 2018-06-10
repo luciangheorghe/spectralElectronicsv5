@@ -35,7 +35,7 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect(reverse('index'))
+                    return redirect(reverse('accounts:index'))
             else:
                 user_form.add_error(None, "Your username or password are incorrect")
     else:
@@ -64,7 +64,7 @@ def register(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('index'))
+                return redirect(reverse('accounts:index'))
 
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -72,4 +72,4 @@ def register(request):
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
-    return render(request, 'accounts:register.html', args)
+    return render(request, 'register.html', args)

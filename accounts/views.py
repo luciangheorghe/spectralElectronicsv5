@@ -16,7 +16,7 @@ def logout(request):
     """A view that logs the user out and redirects back to the index page"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('shop'))
+    return redirect(reverse('shop/product/list.html'))
 
 
 def login(request):
@@ -35,14 +35,14 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect(reverse('accounts:index'))
+                    return redirect(reverse('shop/product/list.html'))
             else:
                 user_form.add_error(None, "Your username or password are incorrect")
     else:
         user_form = UserLoginForm()
 
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'accounts/login.html', args)
+    return render(request, 'login.html', args)
 
 
 @login_required
@@ -64,7 +64,7 @@ def register(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('accounts:index'))
+                return redirect(reverse('shop/product/list.html'))
 
             else:
                 messages.error(request, "unable to log you in at this time!")

@@ -72,4 +72,4 @@ def register(request):
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
-    return render(request, 'register.html', args)
+    return render(request, 'accounts:register.html', args)

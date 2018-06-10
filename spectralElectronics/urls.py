@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from accounts import urls as urls_accounts
+# from accounts import urls as urls_accounts
 from django.conf import settings
 from django.conf.urls.static import static
 

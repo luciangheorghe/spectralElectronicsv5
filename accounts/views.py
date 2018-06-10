@@ -42,7 +42,7 @@ def login(request):
         user_form = UserLoginForm()
 
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'login', args)
+    return render(request, 'login.html', args)
 
 
 @login_required

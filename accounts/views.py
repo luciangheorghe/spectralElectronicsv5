@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def index(request):
     """A view that displays the index page"""
-    return render(request, "accounts/index.html")
+    return render(request, "index.html")
 
 
 def logout(request):
@@ -42,13 +42,13 @@ def login(request):
         user_form = UserLoginForm()
 
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'accounts/login.html', args)
+    return render(request, 'login.html', args)
 
 
 @login_required
 def profile(request):
     """A view that displays the profile page of a logged in user"""
-    return render(request, 'accounts/profile.html')
+    return render(request, 'profile.html')
 
 
 def register(request):
@@ -72,4 +72,4 @@ def register(request):
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
-    return render(request, 'accounts/register.html', args)
+    return render(request, 'register.html', args)

@@ -16,18 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from accounts import urls as urls_accounts
-from accounts.views import index, logout, login, register
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', index, name="index"),
-    url(r'^accounts/logout/$', logout, name="logout"),
-    url(r'^accounts/login/$', login, name="login"),
-    url(r'^accounts/register/$', registration, name="registration"),
-    url(r'^accounts/', include('accounts.urls', namespace='accounts')),
+    url(r'^accounts/', include(urls_accounts)),
     url(r'^cart/', include('cart.urls', namespace='cart')),
     url(r'^orders/', include('orders.urls', namespace='orders')),
     url(r'^payment/', include('payment.urls', namespace='payment')),

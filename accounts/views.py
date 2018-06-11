@@ -9,14 +9,14 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def index(request):
     """A view that displays the index page"""
-    return render(request, "accounts/index.html")
+    return render(request, "index")
 
 
 def logout(request):
     """A view that logs the user out and redirects back to the index page"""
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('shop/product/list.html'))
+    return redirect(reverse('shop:product_list'))
 
 
 def login(request):
@@ -35,20 +35,20 @@ def login(request):
                     next = request.GET['next']
                     return HttpResponseRedirect(next)
                 else:
-                    return redirect(reverse('shop/product/list.html'))
+                    return redirect(reverse('shop:product_list'))
             else:
                 user_form.add_error(None, "Your username or password are incorrect")
     else:
         user_form = UserLoginForm()
 
     args = {'user_form': user_form, 'next': request.GET.get('next', '')}
-    return render(request, 'accounts/login.html', args)
+    return render(request, 'login.html', args)
 
 
 @login_required
 def profile(request):
     """A view that displays the profile page of a logged in user"""
-    return render(request, 'accounts/profile.html')
+    return render(request, 'profile.html')
 
 
 def register(request):
@@ -64,7 +64,7 @@ def register(request):
             if user:
                 auth.login(request, user)
                 messages.success(request, "You have successfully registered")
-                return redirect(reverse('shop/product/list.html'))
+                return redirect(reverse('index'))
 
             else:
                 messages.error(request, "unable to log you in at this time!")
@@ -72,4 +72,4 @@ def register(request):
         user_form = UserRegistrationForm()
 
     args = {'user_form': user_form}
-    return render(request, 'accounts/register.html', args)
+    return render(request, 'register.html', args)

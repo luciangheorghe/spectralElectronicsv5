@@ -39,4 +39,4 @@ s3transfer==0.1.13
 urllib3==1.22
 virtualenv==15.0.1
 WeasyPrint==0.42.3
-Werkzeug==0.14.1
+Werkzeug==0.15.3

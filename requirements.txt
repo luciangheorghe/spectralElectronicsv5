@@ -24,7 +24,7 @@ oauthlib==1.0.3
 padme==1.1.1
 pdfrw==0.4
 pexpect==4.0.1
-Pillow==5.1.0
+Pillow==8.2.0
 pipreqs==0.4.9
 psycopg2==2.7.4
 ptyprocess==0.5
